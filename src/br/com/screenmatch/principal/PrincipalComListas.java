@@ -1,11 +1,13 @@
 package br.com.screenmatch.principal;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import br.com.screenmatch.modelos.Filme;
 import br.com.screenmatch.modelos.Serie;
 import br.com.screenmatch.modelos.Titulo;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -17,12 +19,14 @@ public class PrincipalComListas {
         filmeDoPaulo.avalia(10);
         Serie lost = new Serie("Lost", 2000);
 
-        ArrayList<Titulo> Lista = new ArrayList<>();
-        Lista.add(filmeDoPaulo);
-        Lista.add(meuFilme);
-        Lista.add(outroFilme);
-        Lista.add(lost);
-        for(Titulo item: Lista){
+        // Filme f1 = filmeDoPaulo;
+
+        List<Titulo> lista = new ArrayList<>();
+        lista.add(filmeDoPaulo);
+        lista.add(meuFilme);
+        lista.add(outroFilme);
+        lista.add(lost);
+        for(Titulo item: lista){
             System.out.println(item.getNome());
             if(item instanceof Filme filme && filme.getClassificacao() > 2){
                 System.out.println("Classificação " + filme.getClassificacao());
@@ -36,9 +40,11 @@ public class PrincipalComListas {
         System.out.println(buscaPorArtista);
 
         Collections.sort(buscaPorArtista);
-        System.out.println("Depois da Ordenação");
+        System.out.println("Depois ,,,da Ordenação");
         System.out.println(buscaPorArtista);
-
+        System.out.println("Lista de titulos ordenados");
         Collections.sort(lista);
+        System.out.println(lista);
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
     }
 }
