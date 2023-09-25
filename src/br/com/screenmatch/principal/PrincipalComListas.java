@@ -11,6 +11,8 @@ import java.util.List;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
+
+        // Cria os filmes e series como Objetos
         Filme meuFilme = new Filme("O poderoso chefão", 1970);
         meuFilme.avalia(9);
         Filme outroFilme = new Filme("Avatar", 2023);
@@ -20,7 +22,7 @@ public class PrincipalComListas {
         Serie lost = new Serie("Lost", 2000);
 
         // Filme f1 = filmeDoPaulo;
-
+        // Adiciona filmes e series na lista
         List<Titulo> lista = new ArrayList<>();
         lista.add(filmeDoPaulo);
         lista.add(meuFilme);
@@ -32,16 +34,18 @@ public class PrincipalComListas {
                 System.out.println("Classificação " + filme.getClassificacao());
             }
         }
-        
+        // Busca pelos artistas
         ArrayList<String> buscaPorArtista = new ArrayList<>();
         buscaPorArtista.add("Adam Sandler");
         buscaPorArtista.add("Paulo");
         buscaPorArtista.add("Jaqueline");
         System.out.println(buscaPorArtista);
 
+        // Ordena pelo nome e imprime os artistas na ordem
         Collections.sort(buscaPorArtista);
-        System.out.println("Depois ,,,da Ordenação");
+        System.out.println("Depois da Ordenação");
         System.out.println(buscaPorArtista);
+        // Ordena os filmes e series pelo nome e imprime
         System.out.println("Lista de titulos ordenados");
         Collections.sort(lista);
         System.out.println(lista);
