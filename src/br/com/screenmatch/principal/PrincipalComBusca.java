@@ -1,5 +1,6 @@
 package br.com.screenmatch.principal;
 
+// Importa os arquivos locais
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Importa os arquivos locais
+// Importa os arquivos Gson
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -24,7 +25,7 @@ public class PrincipalComBusca {
     public static void main(String[] args) throws IOException, InterruptedException {
         // cria um metodo Scanner
         Scanner leitura = new Scanner(System.in);
-        String busca = "";
+        String busca = " ";
         List<Titulo> titulos = new ArrayList<>();
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting().create();
         // fecha o metodo Scanner
